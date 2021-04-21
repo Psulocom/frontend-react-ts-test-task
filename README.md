@@ -1,34 +1,35 @@
 # Psulo React/Typescript Test Task
 
 - [Psulo React/Typescript Test Task](#psulo-react-typescript-test-task)
-    + [System Requirements](#system-requirements)
-    * [How to Setup the Backend](#how-to-setup-the-backend)
-        + [Seeding the database](#seeding-the-database)
-    * [Getting Started](#getting-started)
-        + [git workflow](#git-workflow)
-        + [Submitting the task](#submitting-the-task)
-    * [1. Cleaning up the warnings](#1-cleaning-up-the-warnings)
-    * [2. Request Submit Bug](#2-request-submit-bug)
-    * [3. Requests menu is not active on "Show request" and "Create new request" pages](#3-requests-menu-is-not-active-on--show-request--and--create-new-request--pages)
-    * [4. New Feature: Clear Field](#4-new-feature--clear-field)
-    * [5. Loading state missing](#5-loading-state-missing)
-    * [6. Add errors to the form](#6-add-errors-to-the-form)
-    * [7. Fix picture modal layout](#7-fix-picture-modal-layout)
-    * [8. Typing Issues for CustomInput](#8-typing-issues-for-custominput)
-    * [9. Server doesn't scale!](#9-server-doesn-t-scale-)
-    * [10. Bug Toggling Between Categories / Trending Photos](#10-bug-toggling-between-categories---trending-photos)
-    * [11. When the left-hand side menu opens, the header "blinks"](#11-when-the-left-hand-side-menu-opens--the-header--blinks-)
-    * [12. Add blur-hash image skeletons](#12-add-blur-hash-image-skeletons)
-    * [13. Favorite photos](#13-favorite-photos)
-    * [14. Add animation to the modal window](#14-add-animation-to-the-modal-window)
-    * [15. Create a light theme](#15-create-a-light-theme)
-    * [16. Post-mortem](#16-post-mortem)
+  - [System Requirements](#system-requirements)
+  * [How to Setup the Backend](#how-to-setup-the-backend)
+    - [Seeding the database](#seeding-the-database)
+  * [Getting Started](#getting-started)
+    - [git workflow](#git-workflow)
+    - [Submitting the task](#submitting-the-task)
+  * [1. Cleaning up the warnings](#1-cleaning-up-the-warnings)
+  * [2. Request Submit Bug](#2-request-submit-bug)
+  * [3. Requests menu is not active on "Show request" and "Create new request" pages](#3-requests-menu-is-not-active-on--show-request--and--create-new-request--pages)
+  * [4. New Feature: Clear Field](#4-new-feature--clear-field)
+  * [5. Loading state missing](#5-loading-state-missing)
+  * [6. Add errors to the form](#6-add-errors-to-the-form)
+  * [7. Fix picture modal layout](#7-fix-picture-modal-layout)
+  * [8. Typing Issues for CustomInput](#8-typing-issues-for-custominput)
+  * [9. Server doesn't scale!](#9-server-doesn-t-scale-)
+  * [10. Bug Toggling Between Categories / Trending Photos](#10-bug-toggling-between-categories---trending-photos)
+  * [11. When the left-hand side menu opens, the header "blinks"](#11-when-the-left-hand-side-menu-opens--the-header--blinks-)
+  * [12. Add blur-hash image skeletons](#12-add-blur-hash-image-skeletons)
+  * [13. Favorite photos](#13-favorite-photos)
+  * [14. Add animation to the modal window](#14-add-animation-to-the-modal-window)
+  * [15. Create a light theme](#15-create-a-light-theme)
+  * [16. Post-mortem](#16-post-mortem)
 
 Thank you for taking the time to work on the Psulo Test Task for React and Typescript. Please let us know if you have feedback on the Readme or understanding the tasks described here.
 
 ### System Requirements
 
 To start the development servers you need to have the following dependencies setup on your machine:
+
 - Docker
 - Yarn
 
@@ -89,12 +90,14 @@ Lets get started, shall we? Once you start the project with `yarn start` you wil
 You should fix all warnings. Remember to save all of your progress in this task once completed into a single commit file.
 
 Pay attention to `src/components/PictureGrid/index.tsx`:
+
 ```js
 // Missing dep: loadPictures, but it crashes the browser. Why?
-  useEffect(() => {
-    loadPictures(categoryId, currentPage)
-  }, [currentPage, categoryId])
+useEffect(() => {
+  loadPictures(categoryId, currentPage)
+}, [currentPage, categoryId])
 ```
+
 Clearly the `loadPictures` dependency is missing. But wait a minute! If we add the dependency, it crashes the application. This should be fixed.
 
 After fixing this, please create a file called `exercise1.md` and comment in this file: Why does the `loadPictures` dependency crash the browser?
@@ -143,9 +146,7 @@ Ouch more bugs again.. When you browse different categories the website says the
 
 Clearly the frontend thinks that there are no images until it loads some, but this is confusing to the end user.
 
-
 https://user-images.githubusercontent.com/6540703/112203324-15a3e400-8c1b-11eb-879c-9754517aaa06.mp4
-
 
 ### The Task
 
@@ -170,7 +171,7 @@ Ugh, the previous developers really weren't that good.. There is a very obvious 
 
 ### The Task
 
-You should make it this view look better. Put the description below the photo if the photo displayed is a landscape photo and fix the positioning of the image in relation to the pop-up background.
+You should make it this view look better. Put the description below the photo if the displayed photo is a landscape photo and fix the positioning of the image in relation to the pop-up background.
 
 ## 8. Typing Issues for CustomInput
 
@@ -210,9 +211,10 @@ Make sure only one page is loaded on the initial load.
 ## 10. Bug Toggling Between Categories / Trending Photos
 
 The product manager has given you the following bug description
+
 ```
-If I click very fast between these 2 I occasionally will get 
-wrong pictures displayed. E.g. in the reference video I get 
+If I click very fast between these 2 I occasionally will get
+wrong pictures displayed. E.g. in the reference video I get
 pictures of mountains when requested animal pictures.
 ```
 
@@ -226,10 +228,7 @@ Your task is to fix the issue based on the description given by the Product Mana
 
 Ok, I swear this is the last bug. No more after this. We noticed that when the left-hand side menu opens up, the header "blinks". This happens only one time when I open the left categories menu. You can see it happening from this video:
 
-
 https://user-images.githubusercontent.com/6540703/112205120-25bcc300-8c1d-11eb-9fea-5f496bf00ad2.mp4
-
-
 
 ### The Task
 
@@ -241,14 +240,16 @@ Ok lets get back to some nice and cool feature work. Our application looks bad w
 
 https://user-images.githubusercontent.com/6540703/112205389-674d6e00-8c1d-11eb-955c-43778a9d347b.mp4
 
-
-
 ### The Task
 
 You should improve this feature by adding loading skeletons so there is some "fake" content until you get the images list. Then, use `blurhash` to create a nice blurry image while the images load.
 
-Blur hash reference: [https://blurha.sh/](https://blurha.sh/)
+The flow is:
+- Show skeletons (gray squares of different sizes, representing the photos) until you receive the API response from the server
+- Show blurred images (blurhashes) until you load real photos 
+- Show real photos
 
+Blur hash reference: [https://blurha.sh/](https://blurha.sh/)
 
 ## 13. Favorite photos
 
@@ -256,13 +257,17 @@ Lets keep the feature train going! We want to add a favorite photos feature. Eac
 
 ![2021-03-17_23-33-26](https://user-images.githubusercontent.com/6540703/112205501-84823c80-8c1d-11eb-8283-9e363f845014.png)
 
-
 ### The Task
+
+You should implement favorite photos feature. Add a heart icon to every and each photo, and make it indicate whether a photo is liked by the user or not.
+Generally speaking, this should work just like on any social media websites, e.g. facebook.
+Once the heart icon is clicked, you should immediately reflect it in the UI (even before you receive a response from the server). If server responds with the error, you should rollback the changes to reflect the correct state of the app.
+Due to an optimistic update user may like the photo, then immediately close the browser before browser receives a response from the server. If it happens, we should warn the users and present them with an opportunity to stay on the webpage.
 
 To complete this feature you should:
 
-- Rollback on server error
-- Protect from quitting until all requests are processed
+- Rollback on server error – sometimes the API request will return an error.
+- Protect from quitting the browser until all requests are processed.
 
 You can navigate to the `Likes API Tester` section to play around with API a little.
 
@@ -286,6 +291,6 @@ Add a toggle to the website which will change the theme of the website from dark
 
 Whew, you made it! At this point we would like to hear from you. The codebase is not great. It specifically incorporated some issues, it has some bad practices and a few suboptimal solutions.
 
-What are the problems of the codebase? What kind of implementations did you see in the code base that ou did now like? How would you improve it?
+What are the problems of the codebase? What kind of implementations did you see in the code base that you did not like? How would you improve it?
 
 Add a new file called `exercise16.md` to the repository where you document these answers.

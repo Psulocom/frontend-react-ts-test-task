@@ -7,6 +7,17 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_HOST_AUTH_METHOD=trust
       - POSTGRES_DB=psulo-test-task-sample
+    ports:
+      - 5432:5432
+
+  seeds:
+    image: shlajin/psulo-seeds-for-test-task-sample-backend:0.0.1
+    environment:
+      - PGHOST=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=psulo-test-task-sample
+    depends_on:
+      - postgres
 
   app:
     image: shlajin/psulo-test-task-sample-backend:0.0.1
