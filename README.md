@@ -3,7 +3,6 @@
 - [Psulo React/Typescript Test Task](#psulo-react-typescript-test-task)
   - [System Requirements](#system-requirements)
   * [How to Setup the Backend](#how-to-setup-the-backend)
-    - [Seeding the database](#seeding-the-database)
   * [Getting Started](#getting-started)
     - [git workflow](#git-workflow)
     - [Submitting the task](#submitting-the-task)
@@ -43,17 +42,8 @@ To start the Backend service, open this directory in the terminal and run docker
 docker-compose up
 ```
 
-This will start the backend server and the database.
-
-### Seeding the database
-
-In the next step, you will need to seed the database. To do so, run the seed file:
-
-```
-./seed.sh
-```
-
-The backend is ready for you to run! Now you need to install frontend dependencies. To do so run:
+This will start the backend server, the database and will seed the database with some mock data.
+Now you need to install frontend dependencies. To do so run:
 
 ```
 yarn
